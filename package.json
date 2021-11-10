@@ -1,0 +1,15 @@
+{
+  "name": "business-card-generator",
+  "version": "1.0.0",
+  "description": "generate business cards",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "robin-whg",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jspdf": "^2.4.0"
+  }
+}
