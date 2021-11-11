@@ -2,6 +2,7 @@
 import { reactive } from "vue";
 import TheNavbar from "./components/TheNavbar.vue";
 import PreviewCard from "./components/PreviewCard.vue";
+// import OrderSection from "./components/OrderSection.vue";
 
 const form = reactive({
   color: "Bone",
@@ -24,76 +25,80 @@ const form = reactive({
     <div
       class="container px-4 mx-auto my-16 grid grid-cols-1 sm:grid-cols-2 gap-4"
     >
-      <form @submit.prevent="submit()" class="flex flex-col gap-4">
-        <div class="flex flex-col">
-          <label for="first-name" class="font-semibold">Vorname</label>
-          <input type="text" id="first-name" v-model="form.firstName" />
-        </div>
+      <div class="flex justify-center flex-col">
+        <form
+          @submit.prevent="submit()"
+          class="flex flex-col gap-4 w-full sm:w-[32rem]"
+        >
+          <div class="flex flex-col">
+            <label for="first-name" class="font-semibold">Vorname</label>
+            <input type="text" id="first-name" v-model="form.firstName" />
+          </div>
 
-        <div class="flex flex-col">
-          <label for="last-name" class="font-semibold">Nachname</label>
-          <input type="text" id="last-name" v-model="form.lastName" />
-        </div>
+          <div class="flex flex-col">
+            <label for="last-name" class="font-semibold">Nachname</label>
+            <input type="text" id="last-name" v-model="form.lastName" />
+          </div>
 
-        <div class="flex flex-col">
-          <label for="title" class="font-semibold">Titel</label>
-          <input type="text" id="title" v-model="form.title" />
-        </div>
+          <div class="flex flex-col">
+            <label for="color" class="font-semibold">Farbe</label>
+            <select
+              v-model="form.color"
+              name="color"
+              id="color"
+              class="p-1 w-full"
+            >
+              <option value="Bone">Bone</option>
+              <option value="Eggshell">Eggshell</option>
+              <option value="White">White</option>
+              <option value="Subtle Off-White">Subtle Off-White</option>
+            </select>
+          </div>
 
-        <div class="flex flex-col">
-          <label for="color" class="font-semibold">Farbe</label>
-          <select
-            v-model="form.color"
-            name="color"
-            id="color"
-            class="p-1 w-full"
-          >
-            <option value="Bone">Bone</option>
-            <option value="Eggshell">Eggshell</option>
-            <option value="Pale Nimbus">Pale Nimbus</option>
-            <option value="Subtle Off-White">Subtle Off-White</option>
-          </select>
-        </div>
+          <div class="flex flex-col">
+            <label for="color" class="font-semibold">Schriftart</label>
+            <select
+              v-model="form.font"
+              name="color"
+              id="color"
+              class="p-1 w-full"
+            >
+              <option value="Silian Rail">Silian Rail</option>
+              <option value="Romalian Type">Romalian Type</option>
+              <option value="Pale Nimbus">Pale Nimbus</option>
+            </select>
+          </div>
 
-        <div class="flex flex-col">
-          <label for="color" class="font-semibold">Schriftart</label>
-          <select
-            v-model="form.font"
-            name="color"
-            id="color"
-            class="p-1 w-full"
-          >
-            <option value="Silian Rail">Silian Rail</option>
-            <option value="Romalian Type">Romalian Type</option>
-          </select>
-        </div>
+          <div class="flex items-center gap-2">
+            <input type="checkbox" name="" id="" class="" />
+            <label for="tasteful-thickness" class="font-semibold"
+              >Tastefull Thickness</label
+            >
+          </div>
 
-        <div class="flex items-center gap-2">
-          <input type="checkbox" name="" id="" class="" />
-          <label for="tasteful-thickness" class="font-semibold"
-            >Tastefull Thickness</label
-          >
-        </div>
+          <div class="flex items-center gap-2">
+            <input type="checkbox" name="watermark" id="watermark" class="" />
+            <label for="watermark" class="font-semibold">Watermark</label>
+          </div>
 
-        <div class="flex items-center gap-2">
-          <input type="checkbox" name="watermark" id="watermark" class="" />
-          <label for="watermark" class="font-semibold">Watermark</label>
-        </div>
-
-        <div class="flex items-center gap-2">
-          <input
-            type="checkbox"
-            name="raised-lettering"
-            id="raised-lettering"
-            class=""
-          />
-          <label for="raised-lettering" class="font-semibold"
-            >Raised Lettering</label
-          >
-        </div>
-      </form>
-      <div class="flex justify-center items-center">
+          <div class="flex items-center gap-2">
+            <input
+              type="checkbox"
+              name="raised-lettering"
+              id="raised-lettering"
+              class=""
+            />
+            <label for="raised-lettering" class="font-semibold"
+              >Raised Lettering</label
+            >
+          </div>
+        </form>
+      </div>
+      <div class="flex justify-center">
         <preview-card :form="form"></preview-card>
+      </div>
+      <div class="my-8 sm:col-span-2 flex flex-col justify-center items-center">
+        <!-- <order-section :form="form"></order-section> -->
       </div>
     </div>
   </div>

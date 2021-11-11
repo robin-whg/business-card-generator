@@ -11,6 +11,7 @@
     "@vuelidate/validators": "^2.0.0-alpha.25",
     "axios": "^0.24.0",
     "jspdf": "^2.4.0",
+    "jspdf-html2canvas": "^1.4.9",
     "vue": "^3.2.16"
   },
   "devDependencies": {

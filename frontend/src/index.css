@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .font-variant-caps {
+    font-variant-caps: small-caps;
+  }
+}
