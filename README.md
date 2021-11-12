@@ -13,7 +13,9 @@
 3. Übergebe das HTML-Element an `html2PDF` und speicher die Datei
     ```js
     async function generate() {
-        await html2PDF(document.getElementById("card"), {
+
+        const element = document.getElementById("card")
+        await html2PDF(element, {
             jsPDF: {
             orientation: "landscape",
             unit: "in",
@@ -24,3 +26,7 @@
         });
     }
     ```
+4. Dokument und Informationen speichern
+
+Code: https://github.com/robin-whg/business-card-generator
+Live Version: https://fir-a6dbc.web.app
